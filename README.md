@@ -24,8 +24,9 @@ Backend Setup (Django)
 
 Clone the repository:
 
-git clone https://github.com/your-repo/library-management.git
-cd library-management/backend
+git clone https://github.com/ramanjaneyululakkanaboina/library_management.git
+
+cd library_management/library_management_system
 
 Create a virtual environment and activate it:
 
@@ -46,3 +47,28 @@ Create a superuser:
 python manage.py createsuperuser
 
 Run the development server:
+
+python manage.py runserver
+
+API Endpoints:
+--------------
+
+| Method | Endpoint             | Description    |
+| ------ | -------------------- | -------------- |
+| POST   | `/api/admin/signup/` | Admin Signup   |
+| POST   | `/api/admin/login/`  | Admin Login    |
+| GET    | `/api/books/`        | Get all books  |
+| POST   | `/api/books/`        | Add a new book |
+| PUT    | `/api/books/{id}/`   | Update a book  |
+| DELETE | `/api/books/{id}/`   | Delete a book  |
+
+Assumptions:
+------------
+
+-> Only admins can add, update, or delete books.
+
+-> Students can only view the book list.
+
+-> Admin authentication uses token-based authentication.
+
+-> The MySQL database must be pre-configured in settings.py.
